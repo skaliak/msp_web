@@ -8,10 +8,11 @@
  * Controller of the mspWebApp
  */
 angular.module('mspWebApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function ($scope, uiGmapGoogleMapApi) {
+  	$scope.poo = 'stinky';
+    
+    uiGmapGoogleMapApi.then(function(maps) {
+    	$scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+    	console.log(typeof maps);
+    });
   });
