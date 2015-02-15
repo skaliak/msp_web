@@ -18,7 +18,7 @@ angular
     'ngTouch',
     'uiGmapgoogle-maps'
   ])
-  .config(function ($routeProvider, uiGmapGoogleMapApiProvider) {
+  .config(function ($routeProvider, uiGmapGoogleMapApiProvider, $resourceProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -28,9 +28,17 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
-      .when('/map', {
-        templateUrl: 'views/map.html',
-        controller: 'MapCtrl'
+      .when('/testing', {
+        templateUrl: 'views/testing.html',
+        controller: 'TestingController'
+      })
+      .when('/sightings', {
+        templateUrl: 'views/sightings.html',
+        controller: 'SightingsController'
+      })
+      .when('/addedit', {
+        templateUrl: 'views/addEditMon.html',
+        controller: 'EditMonsterController'
       })
       .otherwise({
         redirectTo: '/'
@@ -40,4 +48,6 @@ angular
         key: 'AIzaSyBdDrBuInnCwClHmUhvgEn8aXuSIGVyyyA',
         v: '3.17'
     });
+
+    $resourceProvider.defaults.stripTrailingSlashes = false;
   });

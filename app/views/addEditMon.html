@@ -1,0 +1,18 @@
+<div>
+  <p>add/edit monster</p>
+  <form action="#">
+    <label>
+      Name
+      <input type="text" ng-model="newMon.name"/>
+    </label>
+    <label>
+      Description
+      <input type="text" ng-model="newMon.description"/>
+    </label>
+    <label>
+      image url
+      <input type="text" ng-model="newMon.image_url"/>
+    </label>
+    <button ng-click="save_changes()">save</button>
+  </form>
+</div>
