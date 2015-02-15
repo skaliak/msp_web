@@ -1,8 +1,13 @@
 <div>
-  <p>Sightings of {{selected_mon.name}}</p>
+  <h4 ng-show="selected_mon">Sightings of {{selected_mon.name}}</h4>
+  <h4 ng-hide="selected_mon">all sightings</h4>
   <ui-gmap-google-map center='map.center' zoom='map.zoom' control='map.control'>
-    <ui-gmap-markers models='markers' coords="'self'" labelContent="'parent_name'"></ui-gmap-markers>
+    <ui-gmap-markers models='markers' coords="'self'" labelContent="'parent_name'" click="showInfo">
+      <!--<ui-gmap-window options="windowOptions" closeClick="closeClick()">-->
+        <!--<div>a marker</div>-->
+      <!--</ui-gmap-window>-->
+    </ui-gmap-markers>
   </ui-gmap-google-map>
-  <button ng-click="newSighting()">new sighting</button>
+  <button id="newButton" ng-show="selected_mon" ng-click="newSighting()">new sighting</button>
   <!--<button ng-click="report_center()">report center</button>-->
 </div>

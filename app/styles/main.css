@@ -92,3 +92,16 @@ body {
   margin-bottom: 5px;
   border-radius: 5px;
 }
+
+.navbar {
+  margin-bottom: 0;
+}
+
+#newButton {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  width: 200px;
+  height: 30px;
+  display: block;
+}

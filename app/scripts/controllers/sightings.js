@@ -21,10 +21,8 @@ angular.module('mspWebApp')
         var marker_obj = {
           latitude: i.lat, longitude: i.lng,
           id: _.random(0, 1000),
-          options: {
-            title: i.parent_name,
-            labelContent: i.parent_name
-          }
+          name: i.parent_name,
+          timestamp: i.timestamp
         };
         $scope.markers.push(marker_obj);
       });
@@ -35,7 +33,8 @@ angular.module('mspWebApp')
       $scope.markers = [];
 
       $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 10, control: {} };
-      //$scope.map = { zoom: 8 };
+
+      $scope.iwnd = new maps.InfoWindow();
 
       if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
@@ -78,6 +77,17 @@ angular.module('mspWebApp')
             console.log(res);
           });
       };
+
+      $scope.showInfo = function(e) {
+        //console.log(e);
+        var map_instance = e.map;
+        //console.log(map_instance);
+        //var iwnd = new maps.InfoWindow();
+        var content = "<h3>" + e.model.name + "</h3><p>sighted on<br>" + e.model.timestamp + "</p>";
+        $scope.iwnd.setContent(content);
+        //console.log(iwnd);
+        $scope.iwnd.open(map_instance, e);
+      }
 
     });
   });

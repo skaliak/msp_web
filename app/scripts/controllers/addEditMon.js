@@ -17,7 +17,7 @@ angular.module('mspWebApp')
       //m.timestamp = (new Date(Date.now())).toUTCString();
       m.$save()
         .then(function(){
-          $location.path('/testing');
+          $location.path('/monsters');
         })
         .catch(function(res){
           console.log(res);
