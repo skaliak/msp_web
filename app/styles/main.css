@@ -97,10 +97,14 @@ body {
   margin-bottom: 0;
 }
 
-#newButton {
+.monImg {
+  margin-right: 20px;
+}
+
+.newButton {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 5px;
+  margin-bottom: 5px;
   width: 200px;
   height: 30px;
   display: block;

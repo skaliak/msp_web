@@ -29,7 +29,7 @@ angular
         controller: 'AboutCtrl'
       })
       .when('/monsters', {
-        templateUrl: 'views/testing.html',
+        templateUrl: '../views/monsters.html',
         controller: 'TestingController'
       })
       .when('/sightings', {

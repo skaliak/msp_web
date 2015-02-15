@@ -1,12 +1,12 @@
 <div>
+  <button ng-click="edit()" class="newButton">new monster</button>
   <div ng-repeat="mon in monsters">
     <div class="mon-container">
-      <p>{{mon.name}}</p>
+      <h2>{{mon.name}}</h2>
       <p>{{mon.description}}</p>
-      <img ng-src="{{mon.image_url}}" alt="" width="100"/>
+      <img ng-src="{{mon.image_url}}" class="monImg" alt="" width="100"/>
       <button ng-click="edit(mon)">edit</button>
       <button ng-click="getSightings(mon)">sightings</button>
     </div>
   </div>
-  <button ng-click="edit()">new monster</button>
 </div>
